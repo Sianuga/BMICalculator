@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BMI</string>
+    <string name="weight">Weight (kg)</string>
+    <string name="height">Height (m)</string>
+    <string name="calculate">Calculate BMI</string>
+    <string name="your_bmi">Your BMI: </string>
+    <string name="underweight">Underweight</string>
+    <string name="normal">Normal</string>
+    <string name="overweight">Overweight</string>
+    <string name="obese">Obese</string>
+    <string name="normalDESC">You are in a healthy weight range for young and middle-aged adults. </string>
+    <string name="underweightDESC">You are under a healthy weight range for young and middle-aged adults. </string>
+    <string name="overweightDESC">You are above a healthy weight range for young and middle-aged adults. </string>
+    <string name="obeseDESC">You are in a obese weight range for young and middle-aged adults. </string>
+    <string name="empty"> </string>
+    <string name="menuDesc"> Menu </string>
+    <string name="action_cricket">Cricket</string>
+    <string name="action_football">Football</string>
+    <string name="action_hockey">Hockey</string>
+</resources>
