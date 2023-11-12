@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <include layout="@layout/back_toolbar"></include>
+
     <TextView
         android:id="@+id/bmiTextView"
         android:layout_width="wrap_content"

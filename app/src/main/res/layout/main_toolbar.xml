@@ -1,7 +1,7 @@
 
 
 
-<!-- custom_toolbar.xml -->
+
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Button in the Toolbar (top right) -->
+
         <Button
             android:id="@+id/menuButton"
             android:layout_width="50dp"
