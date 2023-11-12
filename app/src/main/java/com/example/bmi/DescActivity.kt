@@ -24,9 +24,5 @@ class DescActivity : AppCompatActivity() {
         val bmiTextView = findViewById<TextView>(R.id.bmiTextView)
 
         bmiTextView.text = bmiValue.toString()
-
-        Utility.setupBackButton(this@DescActivity, findViewById(R.id.backButton))
-
-        Utility.setupMenuButton(this@DescActivity, findViewById(R.id.menuButton))
     }
 }

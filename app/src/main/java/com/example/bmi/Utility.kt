@@ -1,6 +1,7 @@
 package com.example.bmi
 
 
+import BMIViewModel
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,10 +12,10 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.PopupMenu
+import androidx.activity.viewModels
 
 object Utility : AppCompatActivity()
 {
-
 
     fun setupMenuButton(context: Context, menuButton: Button)
     {
@@ -23,26 +24,18 @@ object Utility : AppCompatActivity()
             popupMenu.menuInflater.inflate(R.menu.popup_menu, popupMenu.menu)
             popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
                 when (item.itemId) {
-                    R.id.action_crick ->
-                        Toast.makeText(
-                            context,
-                            "You Clicked : " + item.title,
-                            Toast.LENGTH_SHORT
-                        ).show()
+                    R.id.action_history ->
+                    changeActivity(context,HistoryActivity::class.java)
 
-                    R.id.action_ftbal ->
-                        Toast.makeText(
-                            context,
-                            "You Clicked : " + item.title,
-                            Toast.LENGTH_SHORT
-                        ).show()
+                    R.id.action_author ->
+                    changeActivity(context,AuthorActivity::class.java)
 
-                    R.id.action_hockey ->
-                        Toast.makeText(
-                            context,
-                            "You Clicked : " + item.title,
-                            Toast.LENGTH_SHORT
-                        ).show()
+                    R.id.action_changeUnits ->
+                    {
+                        changeUnits()
+                    }
+
+                    else -> return@OnMenuItemClickListener false
                 }
                 true
             })
@@ -74,4 +67,10 @@ object Utility : AppCompatActivity()
 
         context.startActivity(intent)
     }
+
+    fun changeUnits()
+    {
+
+    }
+
 }

@@ -3,4 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#FF0000FF</color>
+    <color name="underweight">#ADD8E6</color>
+    <color name="healthy">#00FF00 </color>
+    <color name="overweight">#FFFF00 </color>
+    <color name="obese">#FFA500 </color>
+    <color name="severe_obesity">#FF0000 </color>
 </resources>

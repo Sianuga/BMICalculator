@@ -2,6 +2,8 @@
     <string name="app_name">BMI</string>
     <string name="weight">Weight (kg)</string>
     <string name="height">Height (m)</string>
+    <string name="heightImp">Height (in)</string>
+    <string name="weightImp">Weight (lb)</string>
     <string name="calculate">Calculate BMI</string>
     <string name="your_bmi">Your BMI: </string>
     <string name="underweight">Underweight</string>
@@ -14,7 +16,13 @@
     <string name="obeseDESC">You are in a obese weight range for young and middle-aged adults. </string>
     <string name="empty"> </string>
     <string name="menuDesc"> Menu </string>
-    <string name="action_cricket">Cricket</string>
-    <string name="action_football">Football</string>
-    <string name="action_hockey">Hockey</string>
+    <string name="action_history">History</string>
+    <string name="action_author">Author</string>
+    <string name="action_changeUnits">Change units</string>
+    <string name="authorName">Paweł </string>
+    <string name="authorDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget nulla eget sem aliquam euismod vel nec felis. Ut interdum, justo vel sagittis laoreet, mauris ligula hendrerit orci, vel ultricies mi odio vitae justo.
+
+    In vehicula, libero quis gravida vestibulum, metus tellus feugiat libero, eu tincidunt neque ligula vel justo. Nam facilisis, orci eu consequat vulputate, ligula justo laoreet purus, nec posuere arcu felis vel ligula.
+
+    Praesent eu nisi vitae libero luctus cursus. Vivamus in lectus eget ex scelerisque eleifend. Integer ut ante nisl. Fusce fermentum euismod urna, vel convallis justo cursus nec.</string>
 </resources>
