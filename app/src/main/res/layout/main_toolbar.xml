@@ -16,12 +16,13 @@
         app:layout_constraintEnd_toEndOf="parent">
 
 
-        <Button
+        <ImageButton
             android:id="@+id/menuButton"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="15dp"
-            android:backgroundTint="@color/blue"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="55dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/white"
             android:text="@string/empty"
             android:contentDescription="@string/menuDesc"
             android:textSize="0sp"
@@ -31,6 +32,9 @@
             android:minWidth="0dp"
             android:insetTop="0dp"
             android:insetBottom="0dp"
+            android:src="@drawable/menu_icon"
+            android:scaleType="fitXY"
+            android:rotation="90"
             />
     </androidx.appcompat.widget.Toolbar>
 </merge>

@@ -40,7 +40,7 @@ object Utility : AppCompatActivity()
         }
     }
 
-    fun setupMenuButton(context: Context, menuButton: Button, changeUnitsCallback: () -> Unit)
+    fun setupMenuButton(context: Context, menuButton: ImageButton, changeUnitsCallback: () -> Unit)
     {
         menuButton.setOnClickListener {
             val popupMenu: PopupMenu = PopupMenu(context, menuButton)
