@@ -38,7 +38,7 @@ class HistoryActivity : AppCompatActivity() {
     }
 
     private fun updateHistoryUI(historyList: List<String>) {
-        val adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, historyList)
+        val adapter = CustomAdapter(this, historyList)
         historyListView.adapter = adapter
     }
 }
