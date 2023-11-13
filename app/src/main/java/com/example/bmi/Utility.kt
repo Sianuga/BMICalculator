@@ -1,14 +1,11 @@
 package com.example.bmi
 
 
-import BMIViewModel
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.text.Layout
 import android.widget.Button
-import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.PopupMenu
@@ -32,7 +29,33 @@ object Utility : AppCompatActivity()
 
                     R.id.action_changeUnits ->
                     {
-                        changeUnits()
+                        Toast.makeText(context, "Units changed", Toast.LENGTH_SHORT).show()
+                    }
+
+                    else -> return@OnMenuItemClickListener false
+                }
+                true
+            })
+            popupMenu.show()
+        }
+    }
+
+    fun setupMenuButton(context: Context, menuButton: Button, changeUnitsCallback: () -> Unit)
+    {
+        menuButton.setOnClickListener {
+            val popupMenu: PopupMenu = PopupMenu(context, menuButton)
+            popupMenu.menuInflater.inflate(R.menu.popup_menu, popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener(PopupMenu.OnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.action_history ->
+                        changeActivity(context,HistoryActivity::class.java)
+
+                    R.id.action_author ->
+                        changeActivity(context,AuthorActivity::class.java)
+
+                    R.id.action_changeUnits ->
+                    {
+                        changeUnitsCallback.invoke()
                     }
 
                     else -> return@OnMenuItemClickListener false
@@ -50,7 +73,7 @@ object Utility : AppCompatActivity()
         }
     }
 
-    fun changeActivity(context: Context,activity: Class<*>, vararg extras: Pair<String, Any>) {
+    fun changeActivity(context: Context, activity: Class<*>, vararg extras: Pair<String, Any>) {
         val intent = Intent(context, activity)
 
         for (extra in extras) {
@@ -68,9 +91,14 @@ object Utility : AppCompatActivity()
         context.startActivity(intent)
     }
 
-    fun changeUnits()
-    {
-
+    fun chooseColor(bmi: Float): Int {
+        val colorResId = when {
+            bmi < 18.5 -> return R.color.underweight
+            bmi < 25 -> return R.color.healthy
+            bmi < 30 ->return  R.color.overweight
+            bmi < 40 ->return R.color.obese
+            else -> return R.color.severe_obesity
+        }
     }
 
 }

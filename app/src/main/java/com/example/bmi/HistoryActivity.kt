@@ -28,7 +28,13 @@ class HistoryActivity : AppCompatActivity() {
         val sharedPreferences: SharedPreferences =
             getSharedPreferences("BMI_HISTORY", Context.MODE_PRIVATE)
         val historyString = sharedPreferences.getString("history", "") ?: ""
-        return historyString.split(",")
+        var splitHistory = historyString.split(",")
+
+        val formattedHistory = splitHistory.map { entry ->
+            val (bmi, timestamp) = entry.split(";")
+            "BMI $bmi, Date $timestamp"
+        }
+        return formattedHistory.reversed()
     }
 
     private fun updateHistoryUI(historyList: List<String>) {

@@ -2,18 +2,15 @@ package com.example.bmi
 
 import BMIViewModel
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.bmi.DescActivity
-import com.example.bmi.R
-import com.example.bmi.Utility
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         val calculateButton = findViewById<Button>(R.id.calculateButton)
         val resultTextView = findViewById<TextView>(R.id.resultTextView)
+        val weightTextEdit = findViewById<EditText>(R.id.weightEditText)
+        val heightTextEdit = findViewById<EditText>(R.id.heightEditText)
 
         var sharedPreferences = getSharedPreferences("BMI_HISTORY", Context.MODE_PRIVATE)
         var historyString = sharedPreferences.getString("history", "") ?: ""
@@ -44,24 +43,47 @@ class MainActivity : AppCompatActivity() {
             resultTextView.setTextColor(getColor(color))
         }
 
-        calculateButton.setOnClickListener {
-            val weightString = findViewById<EditText>(R.id.weightEditText).text.toString()
-            val heightString = findViewById<EditText>(R.id.heightEditText).text.toString()
+        viewModel.metricUnits.observe(this){metricUnits ->
+            weightTextEdit.text.clear()
+            heightTextEdit.text.clear()
 
-            runBMICalc(weightString, heightString)
-            sharedPreferences.edit().putString("history", viewModel.history.value?.joinToString(",")).apply()
+            if(metricUnits)
+            {
+                weightTextEdit.hint = getString(R.string.weight)
+                heightTextEdit.hint = getString(R.string.height)
+            }
+            else
+            {
+                weightTextEdit.hint = getString(R.string.weightImp)
+                heightTextEdit.hint = getString(R.string.heightImp)
+            }
+
+
         }
 
-        Utility.setupMenuButton(this@MainActivity, findViewById(R.id.menuButton))
+        calculateButton.setOnClickListener {
+            val weightString = weightTextEdit.text.toString()
+            val heightString = heightTextEdit.text.toString()
+
+            runBMICalc(weightString, heightString,sharedPreferences)
+
+
+        }
+
+        Utility.setupMenuButton(this@MainActivity, findViewById(R.id.menuButton), viewModel::changeUnits)
     }
 
-    private fun runBMICalc(weightString: String, heightString: String) {
+    private fun runBMICalc(weightString: String, heightString: String, sharedPreferences: SharedPreferences){
         if (weightString.isNotEmpty() && heightString.isNotEmpty()) {
             val weight = weightString.toDouble()
             val height = heightString.toDouble()
 
             if (weight > 0 && height > 0) {
                 viewModel.calculateBMI(weight.toFloat(), height.toFloat())
+                findViewById<EditText>(R.id.weightEditText).text.clear()
+                findViewById<EditText>(R.id.heightEditText).text.clear()
+                sharedPreferences.edit().putString("history", viewModel.history.value?.joinToString(",")).apply()
+                Utility.changeActivity(this, DescActivity::class.java, "BMI" to viewModel.bmiValue.value.toString())
             } else {
                 Toast.makeText(
                     this,

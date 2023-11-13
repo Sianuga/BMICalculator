@@ -20,9 +20,21 @@
     <string name="action_author">Author</string>
     <string name="action_changeUnits">Change units</string>
     <string name="authorName">Paweł </string>
-    <string name="authorDesc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget nulla eget sem aliquam euismod vel nec felis. Ut interdum, justo vel sagittis laoreet, mauris ligula hendrerit orci, vel ultricies mi odio vitae justo.
+    <string name="authorDesc"> Paweł is an everyday enthusiast who finds joy in an active lifestyle. With a passion for sports and a commitment to staying fit, Paweł shares personal experiences and insights to inspire others in their journey toward a balanced and healthy life. His writing reflects the belief that wellness is a rewarding part of everyday living.  </string>
+    <!-- Descriptions -->
+    <string name="underweight_description">BMI indicates that the individual is underweight, potentially leading to health risks. Adequate nutrition and a balanced lifestyle are recommended for improvement.</string>
+    <string name="healthy_description">BMI falls within the healthy range, indicating a balanced weight for the individual\'s height. This is associated with a lower risk of various health problems. </string>
+    <string name="overweight_description">BMI classifies the individual as overweight, suggesting an excess of body weight that may impact health. Lifestyle modifications, including diet and exercise, are advised.</string>
+    <string name="obese_description">BMI categorizes the individual as obese, indicating a significant excess of body weight. Lifestyle changes and medical supervision may be necessary to address associated health risks.</string>
+    <string name="severe_obesity_description">BMI places the individual in the category of severe obesity, signifying a critical level of excess body weight. Urgent lifestyle changes, medical intervention, and professional guidance are essential for health improvement.</string>
 
-    In vehicula, libero quis gravida vestibulum, metus tellus feugiat libero, eu tincidunt neque ligula vel justo. Nam facilisis, orci eu consequat vulputate, ligula justo laoreet purus, nec posuere arcu felis vel ligula.
+    <!-- Names -->
+    <string name="underweight_name">Underweight name</string>
+    <string name="healthy_name">Healthy</string>
+    <string name="overweight_name">Overweight</string>
+    <string name="obese_name">Obese</string>
+    <string name="severe_obesity_name">Severe obesity</string>
 
-    Praesent eu nisi vitae libero luctus cursus. Vivamus in lectus eget ex scelerisque eleifend. Integer ut ante nisl. Fusce fermentum euismod urna, vel convallis justo cursus nec.</string>
+
 </resources>
+
